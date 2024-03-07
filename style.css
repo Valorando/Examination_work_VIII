@@ -1,0 +1,297 @@
+@charset "windows-1251";
+
+body
+{
+    margin: 0;
+    background-color: lightgray;
+}
+
+header
+{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 10px;
+    height: 50px;
+    background-color: white;
+}
+
+#h
+{
+    position: relative;
+    float: left;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(63, 155, 150);
+}
+
+#l1
+{
+    color: rgb(63, 155, 150);
+    font-weight: bold;
+}
+
+#geo
+{
+    position: relative;
+    float: right;
+}
+
+#navigation
+{
+    width: 100%;
+    height: 50px;
+    background-color: rgb(75, 74, 74);
+}
+
+#today, #fday
+{
+    position: relative;
+    float: left;
+    color: white;
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 14px;
+    
+}
+
+#today
+{
+    margin-left: 40px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 3px solid rgb(63, 155, 150);
+}
+
+#fday
+{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#content
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+#today_panel, #fday_panel
+{
+    margin-top: 20px;
+    margin-left: 40px;
+    right: 40px; 
+    width: calc(100% - 80px); 
+    height: 100%;
+}
+
+#current_weather, #hourly, #nearby_places, #hourly2
+{
+    background-color: white;
+    border: 1px solid lightgray;
+}
+
+#current_weather
+{
+    width: 100%;
+    height: 160px;
+}
+
+#hourly
+{
+    width: 100%;
+    height: 350px;
+    margin-top: 20px;
+}
+
+#nearby_places
+{
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+}
+
+
+#h2, #date, #h3, #h4
+{
+    position: relative;
+    margin-top: 20px;
+    font-weight: bold;
+    color: rgb(63, 155, 150);
+}
+
+#h2, #h3, #h4
+{
+    float: left;
+    margin-left: 20px;
+}
+
+#date
+{
+    
+    float: right;
+    margin-right: 20px;
+}
+
+#weather, #temperature, #day_time
+{
+    text-align: center;
+}
+
+#info
+{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 350px;
+}
+
+#temperature
+{
+    padding-top: 20px;
+}
+
+#day_time
+{
+    padding-top: 33px;
+}
+
+table, td
+{
+    border-spacing: 0px;
+    margin-left: 110px;
+    width: 1000px;
+}
+
+td
+{
+    width: 800px;
+    height: 35px;
+}
+
+#tabl
+{
+    margin-top: 70px;
+    text-align: center;
+}
+
+
+#places 
+{
+    position: relative;
+    margin-top: 80px;
+    width: 100%;
+    height: 200px;
+}
+
+#place1, #place2, #place3, #place4
+{
+    width: 350px;
+    height: 60px;
+    position: absolute;
+    display: inline-flex;
+    background-color: rgb(241, 241, 241);
+    padding: 10px;
+}
+
+#place1 
+{
+    top: 0;
+    left: 0;
+    margin-left: 200px;
+}
+
+#place2 {
+    top: 0;
+    right: 0;  
+    margin-right: 200px;
+}
+
+#place3 
+{
+    bottom: 0;
+    left: 0;
+    margin-left: 200px;
+}
+
+#place4 
+{
+    bottom: 0;
+    right: 0;
+    margin-right: 200px;
+}
+
+#search
+{
+    background-color: rgb(75, 74, 74);
+    color: white;
+}
+
+
+#week
+{
+    width: 100%;
+    height: 250px;
+    display: inline-flex;
+    gap: 10px;
+}
+
+#day1
+{
+    background-color: white;
+    height: 100%;
+    width: 300px;
+    text-align: center;
+}
+
+#day2, #day3, #day4, #day5
+{
+    height: 100%;
+    width: 300px;
+    background-color: rgb(241, 241, 241);
+    text-align: center;
+}
+
+#hourly2
+{
+    width: 100%;
+    height: 350px;
+    margin-top: 20px;
+}
+
+#day1 div:nth-child(1), #day2 div:nth-child(1), #day3 div:nth-child(1), #day4 div:nth-child(1), #day5 div:nth-child(1)
+{
+    color: rgb(63, 155, 150); 
+    font-weight: bold; 
+    font-size: 18px; 
+}
+
+#day1 div:nth-child(2), #day2 div:nth-child(2), #day3 div:nth-child(2), #day4 div:nth-child(2), #day5 div:nth-child(2)
+{
+    font-size: 16px; 
+}
+
+#day1 img, #day2 img, #day3 img, #day4 img, #day5 img 
+{
+    width: 64px; 
+}
+
+#day1 div:nth-child(4), #day2 div:nth-child(4), #day3 div:nth-child(4), #day4 div:nth-child(4), #day5 div:nth-child(4)
+{
+    font-weight: bold; 
+    font-size: 30px; 
+}
+
+#error_panel 
+{
+    width: 100%; 
+    height: 100%;
+    margin-top: 60px;
+    text-align: center;
+    color: rgb(63, 155, 150);
+    font-size: 40px;
+    display: none;
+}
+
+

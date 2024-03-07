@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+    <title>My weather</title>
+</head>
+<body>
+    <header>
+        <div id="h">MY WEATHER</div>
+        <div id="geo"><label  id="l1" for="city">Enter location:  </label>  <input type="text" id="city"><input type="button" id="search" value="Search" onclick="WeatherInSpecifiedLocation()"></div>
+    </header>
+
+    <section id="navigation">
+        <div id="today">Today</div>
+        <div id="fday">5-day forecast</div>
+    </section>
+
+    <section id="content">
+        <section id="today_panel">
+            <section id="current_weather">
+                <div id="h2">CURRENT WEATHER</div>
+                <div id="date"></div>
+                <section id="info">
+                    <div id="weather"></div>
+                    <div id="temperature"></div>
+                    <div id="day_time"></div>
+                </section>
+            </section>
+            <section id="hourly">
+                <div id="h3">HOURLY</div>
+                <div id="tabl">
+                    <table id="weather_table">
+                        <tr><td><b>Today</b></td><td id="t1">-</td><td id="t2">-</td><td id="t3">-</td><td id="t4">-</td><td id="t5">-</td><td id="t6">-</td></tr>
+                        <tr><td> </td><td id="i1">-</td><td id="i2">-</td><td id="i3">-</td><td id="i4">-</td><td id="i5">-</td><td id="i6">-</td></tr>
+                        <tr><td><b>Forecast</b></td><td id="f1">-</td><td id="f2">-</td><td id="f3">-</td><td id="f4">-</td><td id="f5">-</td><td id="f6">-</td></tr>
+                        <tr><td><b>Temp (°C)</b></td><td id="temp1">-</td><td id="temp2">-</td><td id="temp3">-</td><td id="temp4">-</td><td id="temp5">-</td><td id="temp6">-</td></tr>
+                        <tr><td><b>Real Feel</b></td><td id="r1">-</td><td id="r2">-</td><td id="r3">-</td><td id="r4">-</td><td id="r5">-</td><td id="r6">-</td></tr>
+                        <tr><td><b>Wind (km/h)</b></td><td id="w1">-</td><td id="w2">-</td><td id="w3">-</td><td id="w4">-</td><td id="w5">-</td><td id="w6">-</td></tr>
+                    </table>
+                </div>
+            </section>
+            <section id="nearby_places">
+                <div id="h4">NEARBY_PLACES</div>
+                <div id="places">
+                    <div id="place1">-</div>
+                    <div id="place2">-</div>
+                    <div id="place3">-</div>
+                    <div id="place4">-</div>
+                </div>
+            </section>
+        </section>
+        <section id="fday_panel">
+            <section id="week">
+                <div id="day1">-</div>
+                <div id="day2">-</div>
+                <div id="day3">-</div>
+                <div id="day4">-</div>
+                <div id="day5">-</div>
+            </section>
+            <section id="hourly2">
+                <div id="h3">HOURLY</div>
+                <div id="tabl">
+                    <table id="weather_table2">
+                        <tr><td><b>Today</b></td><td id="t1">-</td><td id="t2">-</td><td id="t3">-</td><td id="t4">-</td><td id="t5">-</td><td id="t6">-</td></tr>
+                        <tr><td> </td><td id="it1">-</td><td id="it2">-</td><td id="it3">-</td><td id="it4">-</td><td id="it5">-</td><td id="it6">-</td></tr>
+                        <tr><td><b>Forecast</b></td><td id="ft1">-</td><td id="ft2">-</td><td id="ft3">-</td><td id="ft4">-</td><td id="ft5">-</td><td id="ft6">-</td></tr>
+                        <tr><td><b>Temp (°C)</b></td><td id="tempt1">-</td><td id="tempt2">-</td><td id="tempt3">-</td><td id="tempt4">-</td><td id="tempt5">-</td><td id="tempt6">-</td></tr>
+                        <tr><td><b>Real Feel</b></td><td id="rt1">-</td><td id="rt2">-</td><td id="rt3">-</td><td id="rt4">-</td><td id="rt5">-</td><td id="rt6">-</td></tr>
+                        <tr><td><b>Wind (km/h)</b></td><td id="wt1">-</td><td id="wt2">-</td><td id="wt3">-</td><td id="wt4">-</td><td id="wt5">-</td><td id="wt6">-</td></tr>
+                    </table>
+                </div>
+            </section>
+        </section>
+        <section id="error_panel"></section>
+    </section>
+
+    <script>
+        const today = document.getElementById("today");
+        const fday = document.getElementById("fday");
+        const today_panel = document.getElementById("today_panel");
+        const fday_panel = document.getElementById("fday_panel");
+
+        fday_panel.style.display = "none"
+
+        function TodayEvents()
+        {
+            today.style.borderBottom = "3px solid rgb(63, 155, 150";
+            fday.style.borderBottom = "none";
+            today_panel.style.display = "block";
+            fday_panel.style.display = "none"
+        }
+
+        function FdayEvents()
+        {
+            fday.style.borderBottom = "3px solid rgb(63, 155, 150)"
+            today.style.borderBottom = "none"
+            fday_panel.style.display = "block"
+            today_panel.style.display = "none"
+        }
+
+        today.addEventListener("click", TodayEvents);
+        fday.addEventListener("click", FdayEvents);
+
+        const days = document.querySelectorAll('#week > div');
+
+        days.forEach(day => {
+            day.addEventListener('click', function() {
+                days.forEach(d => {
+                    d.style.backgroundColor = 'rgb(241, 241, 241)';
+                });
+                this.style.backgroundColor = 'white';
+            });
+        });
+    </script>
+</body>
+</html>
